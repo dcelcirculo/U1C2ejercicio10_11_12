@@ -186,4 +186,8 @@ class CarritoDeCompras {
     }
     return total; // Retorna el total calculado
   }
+
+  //16.e. Añade un getter List<Producto> get productos => _productos; para poder ver los productos desde fuera, pero no modificarlos directamente.
+
+  List<Producto> get productos => _productos;
 }
