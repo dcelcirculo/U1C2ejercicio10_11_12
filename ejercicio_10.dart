@@ -149,3 +149,18 @@ A la clase inmutable Configuracion (ejercicio 14), añade el método copyWith.
     );
   }
 }
+
+/* 16. (POO y Listas) Carrito de Compras
+
+Crea una clase Producto inmutable (final String nombre, final double precio).
+*/
+
+class Producto {
+  // Clase Producto
+  // Atributos
+  final String nombre;
+  final double precio;
+
+  // Constructor const
+  const Producto({required this.nombre, required this.precio});
+}
