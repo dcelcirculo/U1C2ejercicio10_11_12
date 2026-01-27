@@ -52,6 +52,14 @@ b. Imprime la cantidad de tareas pendientes.
       .toList(); // Filtra las tareas pendientes
   // Imprime la cantidad de tareas pendientes
   print('Cantidad de tareas pendientes: ${tareasPendientes.length}');
+
+  // 14.d.
+  Configuracion config = Configuracion(
+    urlApi: 'https://api.ejemplo.com',
+    modo: 'dark',
+    timeout: 5000,
+  );
+  //config.modo = 'light'; // Esto debería dar un error porque los atributos son finales
 }
 
 /*
@@ -91,15 +99,42 @@ b. Debe tener 3 atributos: final String urlApi, final String modo (ej: 'dark', '
 c. Crea un constructor const que inicialice estos valores (usa parámetros nombrados y required).
 d. En main(), intenta crear una Configuracion y luego intenta modificar uno de sus atributos (debería darte un error).*/
 
+// 14.a.
 class Configuracion {
+  // 14.b.
   final String urlApi;
   final String modo;
   final int timeout;
 
-  Configuracion({
+  // 14.c.
+  const Configuracion({
     // Constructor const
     required this.urlApi,
     required this.modo,
     required this.timeout,
   });
+
+  /* 15.a. (Inmutabilidad + copyWith) El Método copyWith
+
+A la clase inmutable Configuracion (ejercicio 14), añade el método copyWith.
+*/
+  Configuracion copyWith({
+    // Parámetros opcionales para copiar y modificar atributos
+    // Los parametros que van dentro de {}, son llamados parametros nombrados, Se llaman por nombre al invocarlos
+    // El ? indica que el parametro es opcional y puede ser null porque la idea es que si no se pasa un valor, se use el valor original
+    String? urlApi,
+    String? modo,
+    int? timeout,
+  }) {
+    // Retorna una nueva instancia de Configuracion con los valores modificados o los originales
+    return Configuracion(
+      // Estamos retornando una nueva instancia de Configuracion. Osea que no cambia el objeto actual, sino que crea uno nuevo con los cambios
+      urlApi: // Campo del constructor
+          urlApi ?? // Es el parametro pasado al metodo copyWith.
+          // El operador ?? significa "si el valor de la izquierda es null, usa el valor de la derecha"
+          this.urlApi, // Es el valor original que se tenía antes de llamar a copyWith
+      modo: modo ?? this.modo,
+      timeout: timeout ?? this.timeout,
+    );
+  }
 }
