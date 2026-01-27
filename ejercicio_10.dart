@@ -164,3 +164,15 @@ class Producto {
   // Constructor const
   const Producto({required this.nombre, required this.precio});
 }
+
+//16.b. Crea una clase CarritoDeCompras. CarritoDeCompras debe tener un atributo: List<Producto> _productos = [].
+
+class CarritoDeCompras {
+  List<Producto> _productos =
+      []; // Atributo privado para almacenar los productos
+
+  agregarProducto(Producto producto) {
+    // Método para agregar un producto al carrito
+    _productos.add(producto); // Agrega el producto a la lista
+  }
+}
