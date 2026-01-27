@@ -14,6 +14,28 @@ void main() {
     {'id': 2, 'descripcion': 'Comprar huevos', 'completada': false},
     {'id': 3, 'descripcion': 'Comprar pan', 'completada': true},
   ];
+
+  /*
+12. (Listas + Clases + .map) De JSON a Objetos
+
+¡El gran salto! Toma la lista tareasJson del ejercicio 10.
+
+a. Usa el método .map() para convertir esa List<Map<String, dynamic>> en una List<Tarea>. (Pista: Dentro del .map(), deberás llamar a tu constructor Tarea.fromMap(...)).
+b. Imprime la descripción de la primera tarea de tu nueva lista de objetos.
+*/
+
+  List<Tarea> tareasJsonaList = tareasJSon.map((Map<String, dynamic> mapa) {
+    // Usa .map() para convertir cada mapa en un objeto Tarea
+    return Tarea.fromMap(mapa);
+  }).toList();
+
+  // Imprimir todas las tareas
+  for (var tarea in tareasJsonaList) {
+    // Itera sobre cada tarea en la lista
+    print(
+      'ID: ${tarea.id}, Descripción: ${tarea.descripcion}, Completada: ${tarea.completada}', // Imprime los detalles de la tarea
+    );
+  }
 }
 
 /*
