@@ -176,4 +176,14 @@ class CarritoDeCompras {
     // Método para agregar un producto al carrito
     _productos.add(producto); // Agrega el producto a la lista
   }
+
+  // 16.d. Añade un método double calcularTotal() que itere sobre la lista _productos (puedes usar .forEach o un for...in) y devuelva la suma de todos los precios.
+
+  double calcularTotal() {
+    double total = 0.0; // Variable para almacenar el total
+    for (var producto in _productos) {
+      total += producto.precio; // Suma el precio de cada producto al total
+    }
+    return total; // Retorna el total calculado
+  }
 }
