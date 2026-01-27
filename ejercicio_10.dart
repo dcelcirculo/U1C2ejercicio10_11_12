@@ -60,6 +60,17 @@ b. Imprime la cantidad de tareas pendientes.
     timeout: 5000,
   );
   //config.modo = 'light'; // Esto debería dar un error porque los atributos son finales
+
+  // 15.b. En main(), crea una configInicial. Luego, crea una configModoOscuro usando configInicial.copyWith(modo: 'dark'). Imprime ambas para ver que son diferentes.
+
+  // Creación de la configuración inicial
+  final configInicial = Configuracion(
+    urlApi: 'http://api.ejemplo.com',
+    modo: 'light',
+    timeout: 5000,
+  );
+  // Creación de una nueva configuración modificando solo el modo a oscuro
+  final Configuracion configOscuro = configInicial.copyWith(modo: 'dark');
 }
 
 /*
