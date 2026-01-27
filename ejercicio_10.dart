@@ -171,7 +171,8 @@ class CarritoDeCompras {
   List<Producto> _productos =
       []; // Atributo privado para almacenar los productos
 
-  agregarProducto(Producto producto) {
+  // 16.c. Añade un método agregarProducto(Producto producto).
+  void agregarProducto(Producto producto) {
     // Método para agregar un producto al carrito
     _productos.add(producto); // Agrega el producto a la lista
   }
