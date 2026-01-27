@@ -36,6 +36,19 @@ b. Imprime la descripción de la primera tarea de tu nueva lista de objetos.
       'ID: ${tarea.id}, Descripción: ${tarea.descripcion}, Completada: ${tarea.completada}', // Imprime los detalles de la tarea
     );
   }
+
+  /*
+13. (Listas + Clases + .where) Filtrando Objetos
+
+a. Usando la List<Tarea> (la lista de objetos) del ejercicio 12. Usa .where() para crear una nueva lista llamada tareasPendientes que contenga solo los objetos Tarea cuyo atributo completada sea false.
+b. Imprime la cantidad de tareas pendientes.
+*/
+
+  List<Tarea> tareasPendientes = tareasJsonaList
+      .where((tarea) => tarea.completada == false)
+      .toList(); // Filtra las tareas pendientes
+  // Imprime la cantidad de tareas pendientes
+  print('Cantidad de tareas pendientes: ${tareasPendientes.length}');
 }
 
 /*
