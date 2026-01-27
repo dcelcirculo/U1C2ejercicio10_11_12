@@ -35,6 +35,9 @@ b. Imprime la descripción de la primera tarea de tu nueva lista de objetos.
     print(
       'ID: ${tarea.id}, Descripción: ${tarea.descripcion}, Completada: ${tarea.completada}', // Imprime los detalles de la tarea
     );
+
+    // Imprime la descripción de la primera tarea
+    print(tareasJsonaList[0].descripcion);
   }
 
   /*
@@ -78,4 +81,25 @@ class Tarea {
           map['descripcion'], // Inicializa el atributo descripcion con el valor del mapa
       completada =
           map['completada']; // Inicializa el atributo completada con el valor del mapa
+}
+
+/*
+14. (Inmutabilidad) Clase Configuracion Inmutable
+
+a. Crea una clase inmutable Configuracion.
+b. Debe tener 3 atributos: final String urlApi, final String modo (ej: 'dark', 'light'), final int timeout.
+c. Crea un constructor const que inicialice estos valores (usa parámetros nombrados y required).
+d. En main(), intenta crear una Configuracion y luego intenta modificar uno de sus atributos (debería darte un error).*/
+
+class Configuracion {
+  final String urlApi;
+  final String modo;
+  final int timeout;
+
+  Configuracion({
+    // Constructor const
+    required this.urlApi,
+    required this.modo,
+    required this.timeout,
+  });
 }
