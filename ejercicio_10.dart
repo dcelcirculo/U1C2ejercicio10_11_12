@@ -177,7 +177,7 @@ class CarritoDeCompras {
     _productos.add(producto); // Agrega el producto a la lista
   }
 
-  // 16.d. Añade un método double calcularTotal() que itere sobre la lista _productos (puedes usar .forEach o un for...in) y devuelva la suma de todos los precios.
+  /* 16.d. Añade un método double calcularTotal() que itere sobre la lista _productos (puedes usar .forEach o un for...in) y devuelva la suma de todos los precios.
 
   double calcularTotal() {
     double total = 0.0; // Variable para almacenar el total
@@ -185,9 +185,16 @@ class CarritoDeCompras {
       total += producto.precio; // Suma el precio de cada producto al total
     }
     return total; // Retorna el total calculado
-  }
+  }*/
 
   //16.e. Añade un getter List<Producto> get productos => _productos; para poder ver los productos desde fuera, pero no modificarlos directamente.
 
   List<Producto> get productos => _productos;
+
+  // 17. (POO Avanzado) Mejorando el Carrito de Compras
+
+  // (Investiga esto) Modifica calcularTotal() (ejercicio 16) para que use el método .fold() en la lista.
+  double calcularTotal() {
+    return _productos.fold(0.0, (suma, p) => suma + p.precio);
+  }
 }
