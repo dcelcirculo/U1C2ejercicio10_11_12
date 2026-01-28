@@ -171,10 +171,18 @@ class CarritoDeCompras {
   List<Producto> _productos =
       []; // Atributo privado para almacenar los productos
 
-  // 16.c. Añade un método agregarProducto(Producto producto).
+  /* 16.c. Añade un método agregarProducto(Producto producto).
   void agregarProducto(Producto producto) {
     // Método para agregar un producto al carrito
     _productos.add(producto); // Agrega el producto a la lista
+  }*/
+
+  // 17.b. Modifica agregarProducto para que no reciba un Producto, sino (String nombre, double precio) y cree el objeto Producto dentro del método.
+  void agregarProducto(String nombre, double precio) {
+    // Método para agregar un producto al carrito
+    _productos.add(
+      Producto(nombre: nombre, precio: precio),
+    ); // Agrega el producto a la lista
   }
 
   /* 16.d. Añade un método double calcularTotal() que itere sobre la lista _productos (puedes usar .forEach o un for...in) y devuelva la suma de todos los precios.
@@ -193,7 +201,7 @@ class CarritoDeCompras {
 
   // 17. (POO Avanzado) Mejorando el Carrito de Compras
 
-  // (Investiga esto) Modifica calcularTotal() (ejercicio 16) para que use el método .fold() en la lista.
+  // a.(Investiga esto) Modifica calcularTotal() (ejercicio 16) para que use el método .fold() en la lista.
   double calcularTotal() {
     return _productos.fold(0.0, (suma, p) => suma + p.precio);
   }
